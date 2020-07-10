@@ -8,14 +8,8 @@ import javax.inject.Inject;
 
 public class HighFashionFactory implements Factory {
 
-    private DesignerService designerService;
-    private PriceEstimator priceEstimator;
-
-    @Inject
-    public HighFashionFactory(DesignerService designerService, PriceEstimator priceEstimator) {
-        this.designerService = designerService;
-        this.priceEstimator = priceEstimator;
-    }
+    @Inject DesignerService designerService;
+    @Inject PriceEstimator priceEstimator;
 
     @Override
     public SneakersInBox makeSneakers() {

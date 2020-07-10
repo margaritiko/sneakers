@@ -1,11 +1,12 @@
 package main;
 
+import com.source.factory.Factory;
 import com.source.factory.HighFashionFactory;
 import dagger.Component;
 
 @Component
 public interface ServicesComponent {
 
-    HighFashionFactory getHighFashionFactory(); // TODO: use Factory instead
+    void inject(HighFashionFactory fashionFactory);
 
 }
