@@ -4,12 +4,14 @@ import com.source.designer.service.DesignerService;
 import com.source.price.estimator.PriceEstimator;
 import com.source.sneakers.models.Sneakers;
 import com.source.sneakers.models.SneakersInBox;
+import javax.inject.Inject;
 
 public class HighFashionFactory implements Factory {
 
     private DesignerService designerService;
     private PriceEstimator priceEstimator;
 
+    @Inject
     public HighFashionFactory(DesignerService designerService, PriceEstimator priceEstimator) {
         this.designerService = designerService;
         this.priceEstimator = priceEstimator;

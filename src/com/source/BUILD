@@ -7,35 +7,35 @@ package(
 java_library(
     name = "brands",
     srcs = glob(["brands/**/*.java"]),
-    deps = ["//src/com/common:random"],
+    deps = ["//src/com/common:random", "//:dagger"],
 )
 
 java_library(
     name = "colors",
     srcs = glob(["colors/**/*.java"]),
-    deps = ["//src/com/common:limits", "//src/com/common:random"],
+    deps = ["//src/com/common:limits", "//src/com/common:random", "//:dagger"],
 )
 
 java_library(
     name = "designer",
     srcs = ["designer/service/DesignerService.java"],
-    deps = [":colors", ":brands", ":sneakers"],
+    deps = [":colors", ":brands", ":sneakers", "//:dagger"],
 )
 
 java_library(
     name = "price",
     srcs = ["price/estimator/PriceEstimator.java"],
-    deps = ["//src/com/common:random", ":sneakers"],
+    deps = ["//src/com/common:random", ":sneakers", "//:dagger"],
 )
 
 java_library(
     name = "sneakers",
     srcs = glob(["sneakers/models/**/*.java"]),
-    deps = [":colors", ":brands"],
+    deps = [":colors", ":brands", "//:dagger"],
 )
 
 java_library(
     name = "factory",
     srcs = glob(["factory/**/*.java"]),
-    deps = [":designer", ":price", ":sneakers"],
+    deps = [":designer", ":price", ":sneakers", "//:dagger"],
 )

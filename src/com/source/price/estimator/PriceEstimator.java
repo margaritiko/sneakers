@@ -5,6 +5,7 @@ import com.source.sneakers.models.Sneakers;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 
 public class PriceEstimator {
 
@@ -15,6 +16,7 @@ public class PriceEstimator {
 
     private List<Integer> coefficients = new ArrayList<>();
 
+    @Inject
     public PriceEstimator(RandomService randomService) {
         int leftBorder = randomService.getRandomInt();
         int rightBorder = randomService.getRandomInt();

@@ -1,10 +1,16 @@
 package com.common.random;
 
 import java.util.Random;
+import javax.inject.Inject;
 
 public class RandomService {
 
-    private Random random = new Random();
+    private Random random;
+
+    @Inject
+    public RandomService() {
+        random = new Random();
+    }
 
     public int getRandomInt() {
         return Math.abs(random.nextInt());

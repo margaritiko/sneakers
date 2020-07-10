@@ -7,9 +7,11 @@ package(
 java_library(
     name = "random",
     srcs = glob(["random/**/*.java"]),
+    deps = ["//:dagger"],
 )
 
 java_library(
     name = "limits",
     srcs = glob(["limits/**/*.java"]),
+    deps = ["//:dagger"],
 )

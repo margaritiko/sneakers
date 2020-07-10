@@ -3,11 +3,13 @@ package com.source.brands.service;
 import com.common.random.RandomService;
 import com.source.brands.models.Brand;
 import com.source.brands.models.OriginCountry;
+import javax.inject.Inject;
 
 public class BrandsService {
 
     private RandomService randomService;
 
+    @Inject
     public BrandsService(RandomService randomService) {
         this.randomService = randomService;
     }

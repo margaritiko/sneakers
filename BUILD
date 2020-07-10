@@ -1,16 +1,21 @@
 load("@rules_java//java:defs.bzl", "java_binary")
 
+load("@dagger//:workspace_defs.bzl", "dagger_rules")
+
+dagger_rules()
+
 java_binary(
     name = "SneakersMain",
-    srcs = ["src/main/Main.java"],
+    srcs = glob(["src/main/*.java"]),
     main_class = "main/Main",
-    deps = ["//src/com/source:brands", 
-	    "//src/com/source:colors", 
-	    "//src/com/source:designer", 
-	    "//src/com/source:price", 
-	    "//src/com/source:sneakers", 
-	    "//src/com/source:factory",
-	    "//src/com/common:limits",
-	    "//src/com/common:random"],
+    deps = ["//:dagger",
+            "//src/com/source:brands",
+	        "//src/com/source:colors",
+	        "//src/com/source:designer",
+	        "//src/com/source:price",
+	        "//src/com/source:sneakers",
+	        "//src/com/source:factory",
+	        "//src/com/common:limits",
+	        "//src/com/common:random"],
 )
 

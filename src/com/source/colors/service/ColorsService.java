@@ -3,12 +3,14 @@ package com.source.colors.service;
 import com.common.limits.LimitsService;
 import com.common.random.RandomService;
 import com.source.colors.models.Color;
+import javax.inject.Inject;
 
 public class ColorsService {
 
     private LimitsService limitsService;
     private RandomService randomService;
 
+    @Inject
     public ColorsService(RandomService randomService, LimitsService limitsService) {
         this.randomService = randomService;
         this.limitsService = limitsService;
