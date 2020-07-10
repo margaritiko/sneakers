@@ -18,7 +18,7 @@ java_library(
 
 java_library(
     name = "designer",
-    srcs = ["designer/service/DesignerService.java"],
+    srcs = glob(["designer/service/**/*.java"]),
     deps = [":colors", ":brands", ":sneakers", "//:dagger"],
 )
 

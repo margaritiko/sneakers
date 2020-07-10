@@ -23,4 +23,9 @@ public class DesignerService {
                             brandsService.getRandomBrand());
     }
 
+    @Inject
+    public void notifyAboutEmployment(Logger logger) {
+        logger.logHiringDesigner(this);
+    }
+
 }
