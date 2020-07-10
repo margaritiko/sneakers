@@ -1,8 +1,7 @@
 package com.source.designer.logger;
 
-import com.source.designer.service.DesignerService;
 
-import javax.inject.Inject;
+import com.source.designer.service.Designer;
 
 public class Logger {
 
@@ -12,8 +11,8 @@ public class Logger {
         this.tagsProvider = tagsProvider;
     }
 
-    public void logHiringDesigner(DesignerService designerService) {
-        System.out.println("A designer was hired.");
+    public void logHiringDesigner(Designer designer, String message) {
+        System.out.println(String.format("A %s designer was hired.", message));
     }
 
 }

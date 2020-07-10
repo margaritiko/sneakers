@@ -1,6 +1,6 @@
 package main;
 
-import com.source.factory.HighFashionFactory;
+import com.source.factory.Factory;
 import com.source.sneakers.models.SneakersInBox;
 
 public class Main {
@@ -9,7 +9,7 @@ public class Main {
 
         ServicesComponent servicesComponent = DaggerServicesComponent.create();
 
-        HighFashionFactory factory = new HighFashionFactory();
+        Factory factory = new Factory();
         servicesComponent.inject(factory);
         SneakersInBox sneakersInBox = factory.makeSneakers();
 
