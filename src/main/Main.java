@@ -1,20 +1,18 @@
 package main;
 
-import com.source.boutique.Boutique;
-import com.source.boutique.BoutiqueModule;
-import com.source.factory.Factory;
-import com.source.sneakers.models.SneakersInBox;
-
 public class Main {
 
     public static void main(String[] args) {
 
         int numberOfBoxes = 3;
+        int percentageOfIncome = 20;
 
         BoutiqueComponent boutiqueComponent = DaggerBoutiqueComponent
                 .builder()
-                .boutiqueModule(new BoutiqueModule(numberOfBoxes))
+                .numberOfBoxes(numberOfBoxes)
+                .percentageOfIncome(percentageOfIncome)
                 .build();
+        
         boutiqueComponent.getBoutique().showStock();
     }
 }
