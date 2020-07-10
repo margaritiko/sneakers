@@ -1,10 +1,10 @@
 package main;
 
-import com.source.factory.Factory;
+import com.source.designer.logger.LoggerModule;
 import com.source.factory.HighFashionFactory;
 import dagger.Component;
 
-@Component
+@Component(modules = LoggerModule.class)
 public interface ServicesComponent {
 
     void inject(HighFashionFactory fashionFactory);

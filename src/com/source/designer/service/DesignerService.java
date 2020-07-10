@@ -2,6 +2,7 @@ package com.source.designer.service;
 
 import com.source.brands.service.BrandsService;
 import com.source.colors.service.ColorsService;
+import com.source.designer.logger.Logger;
 import com.source.sneakers.models.Sneakers;
 import javax.inject.Inject;
 
