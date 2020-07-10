@@ -39,3 +39,9 @@ java_library(
     srcs = glob(["factory/**/*.java"]),
     deps = [":designer", ":price", ":sneakers", "//:dagger"],
 )
+
+java_library(
+    name = "boutique",
+    srcs = glob(["boutique/**/*.java"]),
+    deps = [":factory", ":sneakers", "//:dagger"],
+)

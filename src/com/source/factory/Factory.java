@@ -12,6 +12,12 @@ public class Factory {
 
     @Inject PriceEstimator priceEstimator;
 
+    @Inject
+    public Factory(Designer designer, PriceEstimator priceEstimator) {
+        this.designer = designer;
+        this.priceEstimator = priceEstimator;
+    }
+
     public SneakersInBox makeSneakers() {
         Sneakers sneakers = designer.makeSneakers();
         double price = priceEstimator.estimateSneakers(sneakers);

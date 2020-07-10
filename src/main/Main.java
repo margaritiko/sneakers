@@ -1,5 +1,7 @@
 package main;
 
+import com.source.boutique.Boutique;
+import com.source.boutique.BoutiqueModule;
 import com.source.factory.Factory;
 import com.source.sneakers.models.SneakersInBox;
 
@@ -7,12 +9,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ServicesComponent servicesComponent = DaggerServicesComponent.create();
+        int numberOfBoxes = 3;
 
-        Factory factory = new Factory();
-        servicesComponent.inject(factory);
-        SneakersInBox sneakersInBox = factory.makeSneakers();
-
-        System.out.println(sneakersInBox);
+        BoutiqueComponent boutiqueComponent = DaggerBoutiqueComponent
+                .builder()
+                .boutiqueModule(new BoutiqueModule(numberOfBoxes))
+                .build();
+        boutiqueComponent.getBoutique().showStock();
     }
 }
