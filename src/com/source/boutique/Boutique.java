@@ -22,10 +22,10 @@ public class Boutique {
     }
 
     public void showStock() {
-        System.out.println(String.format("\n______\nBoutique contains %d boxes and takes %d from an income.\n______\n\n", numberOfBoxes, percentageOfIncome));
+        System.out.println(String.format("\n______\nBoutique contains %d boxes and takes %d from an income.\n______\n\n\n", numberOfBoxes, percentageOfIncome));
         for (int numberOfBox = 0; numberOfBox < numberOfBoxes; ++numberOfBox) {
             SneakersInBox box = factory.makeSneakers();
-            System.out.println(String.format("%s\n\n", box));
+            System.out.println(String.format("%s\n\n\n", box));
         }
     }
 

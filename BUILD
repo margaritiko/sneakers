@@ -15,6 +15,7 @@ java_binary(
 	        "//src/com/source:price",
 	        "//src/com/source:sneakers",
 	        "//src/com/source:factory",
+	        "//src/com/source:company",
 	        "//src/com/source:boutique",
 	        "//src/com/common:limits",
 	        "//src/com/common:random",],

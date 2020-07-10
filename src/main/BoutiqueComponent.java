@@ -7,7 +7,11 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
+// You can comment the next line to see the problem with different designers' companies - wrong behavior.
+// Also comment @Singleton annotation in Company and ServicesComponent.
+@Singleton
 @Component(modules = {LoggerModule.class, HighFashionDesignerModule.class})
 public interface BoutiqueComponent {
 

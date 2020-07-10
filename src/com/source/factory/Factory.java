@@ -8,20 +8,34 @@ import javax.inject.Inject;
 
 public class Factory {
 
-    @Inject Designer designer;
+    // Let's hire two designers from one company to see the problem
+    // of creating a new instances of Company class each time
+    // (without using annotation @Singleton at first).
+
+    @Inject Designer mainDesigner;
+    @Inject Designer internDesigner;
 
     @Inject PriceEstimator priceEstimator;
 
     @Inject
-    public Factory(Designer designer, PriceEstimator priceEstimator) {
-        this.designer = designer;
+    public Factory(Designer mainDesigner, Designer internDesigner, PriceEstimator priceEstimator) {
+        this.mainDesigner = mainDesigner;
+        this.internDesigner = internDesigner;
         this.priceEstimator = priceEstimator;
     }
 
     public SneakersInBox makeSneakers() {
-        Sneakers sneakers = designer.makeSneakers();
-        double price = priceEstimator.estimateSneakers(sneakers);
+        Sneakers sneakersFromLeader = mainDesigner.makeSneakers();
+        double leadersSneakersPrice = priceEstimator.estimateSneakers(sneakersFromLeader);
 
-        return new SneakersInBox(sneakers, price);
+        Sneakers sneakersFromIntern = internDesigner.makeSneakers();
+        double internsSneakersPrice = priceEstimator.estimateSneakers(sneakersFromIntern);
+
+        // Returns the cheapest one 💎
+        if (internsSneakersPrice < leadersSneakersPrice) {
+            return new SneakersInBox(sneakersFromIntern, internsSneakersPrice);
+        }
+
+        return new SneakersInBox(sneakersFromLeader, leadersSneakersPrice);
     }
 }

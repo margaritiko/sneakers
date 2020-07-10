@@ -19,7 +19,7 @@ java_library(
 java_library(
     name = "designer",
     srcs = glob(["designer/**/*.java"]),
-    deps = [":colors", ":brands", ":sneakers", "//:dagger"],
+    deps = [":colors", ":brands", ":sneakers", ":company", "//:dagger"],
 )
 
 java_library(
@@ -44,4 +44,10 @@ java_library(
     name = "boutique",
     srcs = glob(["boutique/**/*.java"]),
     deps = [":factory", ":sneakers", "//:dagger"],
+)
+
+java_library(
+    name = "company",
+    srcs = glob(["company/**/*.java"]),
+    deps = ["//src/com/common:random", "//:dagger"],
 )
