@@ -51,3 +51,9 @@ java_library(
     srcs = glob(["company/**/*.java"]),
     deps = ["//src/com/common:random", "//:dagger"],
 )
+
+java_library(
+    name = "customer",
+    srcs = glob(["customer/**/*.java"]),
+    deps = ["//src/com/common:annotations"],
+)

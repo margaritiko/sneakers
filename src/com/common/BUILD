@@ -15,3 +15,8 @@ java_library(
     srcs = glob(["limits/**/*.java"]),
     deps = ["//:dagger"],
 )
+
+java_library(
+    name = "annotations",
+    srcs = glob(["annotations/BuilderProperty.java"])
+)
